@@ -1,0 +1,9 @@
+{
+  "host" : "http://localhost:3000",
+  "cloudrailKey" : "592da15aba304e0a751d59bb",
+
+  "linkedInApp" : {
+    "clientIdentifier" : "78eubr68cpqigw",
+    "clientSecret" : "Ndkzdoq29bDHXlbn"
+  }
+}
