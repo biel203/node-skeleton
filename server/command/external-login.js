@@ -3,16 +3,14 @@ class ExternalLogin {
 
     }
 
-    login (req, res) {
+    request (req, res) {
         var config = require('../config.json');
         var cloudrail = require("cloudrail-si");
-        var username = req.body.username;
-        var password = req.body.password;
 
         cloudrail.Settings.setKey(config.cloudrailKey);
 
         function redirectReceiver(url, currentState, callback) {
-            res.redirect(url)
+            res.send(url)
         }
 
         function onLogin(a, b, c) {
@@ -21,7 +19,8 @@ class ExternalLogin {
 
         var redirectUri = config.host + "/api/receive-auth/";
         var service = new cloudrail.services.LinkedIn(
-            redirectReceiver,
+            //redirectReceiver,
+            cloudrail.RedirectReceivers.getLocalAuthenticator(8080),
             config.linkedInApp.clientIdentifier,
             config.linkedInApp.clientSecret,
             redirectUri,
@@ -33,7 +32,7 @@ class ExternalLogin {
     }
 
     auth (req, res) {
-        console.log(req)
+        res.send(true)
     }
 
 }

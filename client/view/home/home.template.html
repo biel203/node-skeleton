@@ -1,6 +1,7 @@
 <section>
-    <img ng-show="!signinLinkedIn" ng-model="signinLinkedIn" ng-src="/public/images/Retina/Sign-In-Large---Default.png"
-         ng-mouseenter="signinLinkedIn = true" ng-mouseleave="signinLinkedIn = false" alt="">
-
-    Opa
+    <img ng-mouseenter="signinLinkedIn = true"
+         ng-mouseleave="signinLinkedIn = false"
+         ng-click="onLoginLinkedIn()"
+         ng-model="signinLinkedIn" ng-src="{{!signinLinkedIn && '/public/images/Retina/Sign-In-Small---Default.png' || '/public/images/Retina/Sign-In-Small---Hover.png'}}"
+         alt="">
 </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Skeleton</title>
 </head>
-<body>
+<body ng-app="app">
 
 <div ng-view=""></div>
 
@@ -12,8 +12,12 @@
 </body>
 
 <script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular-route/angular-route.js"></script>
 <script src="/lib/jquery/dist/jquery.min.js"></script>
 
 <script src="app.js"></script>
+
+<!-- Controllers -->
+<script src="/view/home/home.controller.js"></script>
 
 </html>
